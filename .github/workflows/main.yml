@@ -1,22 +1,21 @@
 name: Teste Build & Deploy
 on: push
 jobs:
-    build:
-      - uses: actions/checkout@v4
-        with:
-          ref: thisShouldDeploy
-        - name: List files in the repository
-          run: |
-            ls ${{ github.workspace }}
+  build:
+    - uses: actions/checkout@v4
+      with:
+        ref: thisShouldDeploy
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: List files in the repository
+        run: |
+          ls -R ${{ github.workspace }}
+  deploy:
       runs-on: ubuntu-latest
       steps:
-        - name: List files in the repository
-          run: |
-            ls -R ${{ github.workspace }}
-    
-    deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - name: List files in the repository
-              run: |
-                ls -R ${{ github.workspace }}
+          - name: List files in the repository
+            run: |
+              ls -R ${{ github.workspace }}
