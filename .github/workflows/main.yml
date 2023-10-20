@@ -6,7 +6,7 @@ on:
       - thisShouldDeploy
 
 jobs:
-  build:
+  testingCheckout:
     - uses: actions/checkout@v4
       with:
         ref: thisShouldDeploy
@@ -18,8 +18,8 @@ jobs:
       - name: List files in the repository
         run: |
           ls -R ${{ github.workspace }}
-          
-  deploy:
+
+  testingCheckoutAfter:
       runs-on: ubuntu-latest
       steps:
           - name: List files in the repository
