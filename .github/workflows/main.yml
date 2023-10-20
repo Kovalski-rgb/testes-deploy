@@ -3,14 +3,14 @@ name: GitHub Pages
 on:
   push:
     branches:
-    - main
+    - 03-project-basics
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
       with:
         ref: thisShouldDeploy
 
