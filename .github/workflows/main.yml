@@ -3,6 +3,7 @@ name: Teste Build & Deploy
 on:
   push:
     branches:
+      - main
       - thisShouldDeploy
 
 jobs:
@@ -20,8 +21,8 @@ jobs:
         ls -R ${{ github.workspace }}
 
   testingCheckoutAfter:
-      runs-on: ubuntu-latest
-      steps:
-          - name: List files in the repository
-            run: |
-              ls -R ${{ github.workspace }}
+    runs-on: ubuntu-latest
+    steps:
+        - name: List files in the repository
+          run: |
+            ls -R ${{ github.workspace }}
