@@ -3,7 +3,7 @@ name: GitHub Pages
 on:
   push:
     branches:
-    - 03-project-basics
+    - main
 
 jobs:
   deploy:
