@@ -7,17 +7,17 @@ on:
 
 jobs:
   testingCheckout:
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v4
       with:
         ref: thisShouldDeploy
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-    - runs-on: ubuntu-latest
-    - steps:
-      - name: List files in the repository
-        run: |
-          ls -R ${{ github.workspace }}
+    - name: List files in the repository
+      run: |
+        ls ${{ github.workspace }}
+    - name: List files in the repository
+      run: |
+        ls -R ${{ github.workspace }}
 
   testingCheckoutAfter:
       runs-on: ubuntu-latest
